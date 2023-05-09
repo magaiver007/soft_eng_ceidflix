@@ -5,53 +5,49 @@ digraph ceidflix {
 
   node [shape=box , style= filled , fillcolor= "#686666",color = "#000000"];  
   
-  ceidflix -> user [label="has"];
+  ceidflix -> account [label="has"];
     //(1)
-    user -> account [label="has"];
       account -> billing_entry [label="has"];
         billing_entry -> billing_entry_type [label="is"];
-    //(2)
-    user -> device [label="streams_on"];
-      device -> internet [label="connects_to"];
-    //(2)
-    user -> message_inbox [label="has"];
-      message_inbox -> message [label="has"];
-        message -> sender [label="sent_by"];
-        message -> recipient [label="received_by"];
-        message -> conversation [label="part_of"];
-          conversation -> friend [label="involves"];
-    //(3)
-    user -> subscription [label="has"];
+   //(2)
+    account -> subscription [label="has"];
       subscription -> plan [label="has"];
       subscription -> billing_info [label="billed_by"];
         billing_info -> billing_method [label="has"];
-    //(4)
-    user -> profile [label="has"];
-      profile -> statistics [label="has"];
+    //(3)
+    account -> user [label="has"];
+    //(3.1)
+      user -> statistics [label="has"];
         statistics -> content [label="contain"] 
-      //(4.1)
-      profile -> content [label="can_stream"];
+    //(3.2)
+      user -> message_inbox [label="has"];
+        message_inbox -> message [label="has"];
+          message -> sender [label="sent_by"];
+          message -> recipient [label="received_by"];
+          message -> conversation [label="part_of"];
+            conversation -> friend [label="involves"];
+      //(3.3)
+      user -> content [label="can_stream"];
         content -> genre [label="belongs_to"];
           genre -> genre_name [label="has"];
         content -> content_type [label="is"];
           content_type -> content_type_name [label="has"];
         content -> rating [label="has"];
           rating -> rating_value [label="has"];
-      //(4.2)
-      profile -> streaming_list [label="can_create"];
+      //(3.4)
+      user -> streaming_list [label="can_create"];
         streaming_list -> content [label="contain"]
-      //(4.3)
-      profile -> friend_list [label="has"]  
+      //(3.5)
+      user -> friend_list [label="has"]  
         friend_list -> friend [label="has"];
-      //(4.4)
-      profile -> search [label="has"];
+      //(3.6)
+      user -> search [label="has"];
         search -> search_result [label="has"];
           search -> filters [label="has"];
           search_result -> content [label="contain"];
-      //(4.5)
-      profile -> recommendation [label="receives"];
+      //(3.7)
+      user -> recommendation [label="receives"];
         recommendation -> recommendation_type [label="is"];
-      
-      
+            
   
 }
