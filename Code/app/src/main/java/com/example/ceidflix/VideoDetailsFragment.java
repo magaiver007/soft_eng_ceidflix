@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.ceidflix;
 
 import android.content.Context;
 import android.content.Intent;

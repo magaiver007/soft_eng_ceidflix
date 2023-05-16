@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.ceidflix;
 
 import android.content.Intent;
 import android.graphics.Color;
