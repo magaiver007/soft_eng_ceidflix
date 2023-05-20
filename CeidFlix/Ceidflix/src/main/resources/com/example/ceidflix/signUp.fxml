@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.control.Label?>
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignupController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ceidflix.controllers.signUpController">
     <AnchorPane VBox.vgrow="ALWAYS">
         <Text layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CeidFlix" textAlignment="CENTER" wrappingWidth="640.0">
             <font>
@@ -36,7 +36,7 @@
         <Text layoutX="416.0" layoutY="196.0"  text="Repeat Password" />
         <PasswordField fx:id="signUpRepeatPass" layoutX="389.0" layoutY="200.0"/>
 
-        <Label fx:id="signUpText" text="You have Successfully signed up!"/>
+        <Label fx:id="signUpText" />
         <Button fx:id="signUpButton" contentDisplay="CENTER" layoutX="234.0" layoutY="268.0" mnemonicParsing="false" onAction="#onCreateAccountButtonClicked" prefHeight="37.0" prefWidth="173.0" text="Create Account" />
 
     </AnchorPane>
