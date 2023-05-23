@@ -1,6 +1,7 @@
 package com.example.ceidflix.functions;
 //import com.example.ceidflix.interfaces.DataReceiver;
 import com.example.ceidflix.ceidFlix;
+import com.example.ceidflix.controllers.signUpController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class SceneUtil {
+public class SceneUtil extends signUpController {
 
     public static void changeScene(String fxmlFileName, Button button) {
         changeScene(fxmlFileName, button, null);
