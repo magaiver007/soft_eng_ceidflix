@@ -11,7 +11,7 @@
 
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ceidflix.controllers.LogInController">
    <AnchorPane prefHeight="406.0" prefWidth="600.0">
       <Text layoutX="219.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ceidflix"
             textAlignment="CENTER">
@@ -19,12 +19,12 @@
             <Font size="50.0"/>
          </font>
       </Text>
-      <TextField layoutX="381.0" layoutY="128.0" promptText="Username"/>
-      <PasswordField layoutX="381.0" layoutY="169.0" promptText="Password"/>
-      <Button layoutX="381.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0"
+      <TextField fx:id="userNameField" layoutX="381.0" layoutY="128.0" promptText="Username"/>
+      <PasswordField fx:id="passwordField"  layoutX="381.0" layoutY="169.0" promptText="Password"/>
+      <Button fx:id="logInButton" layoutX="381.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0"
               text="Log In"/>
-      <Hyperlink layoutX="380.0" layoutY="246.0" prefWidth="75.0" text="Sign Up" textAlignment="CENTER"/>
-      <Hyperlink contentDisplay="CENTER" layoutX="455.0" layoutY="246.0" prefHeight="23.0" prefWidth="75.0"
+      <Hyperlink fx:id="signUpHyper" layoutX="380.0" layoutY="246.0" prefWidth="75.0" text="Sign Up" textAlignment="CENTER"/>
+      <Hyperlink fx:id="needHelpHyper" contentDisplay="CENTER" layoutX="455.0" layoutY="246.0" prefHeight="23.0" prefWidth="75.0"
                  text="Need Help? " textAlignment="CENTER"/>
    </AnchorPane>
 </VBox>

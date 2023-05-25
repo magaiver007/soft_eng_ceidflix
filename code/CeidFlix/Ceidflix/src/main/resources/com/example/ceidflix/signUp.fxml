@@ -37,7 +37,7 @@
         <PasswordField fx:id="signUpRepeatPass" layoutX="389.0" layoutY="200.0"/>
 
         <Label fx:id="signUpText" />
-        <Button fx:id="signUpButton" contentDisplay="CENTER" layoutX="234.0" layoutY="268.0" mnemonicParsing="false" onAction="#onCreateAccountButtonClicked" prefHeight="37.0" prefWidth="173.0" text="Create Account" />
+        <Button fx:id="signUpButton" contentDisplay="CENTER" layoutX="234.0" layoutY="268.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="173.0" text="Create Account" />
 
     </AnchorPane>
 </VBox>

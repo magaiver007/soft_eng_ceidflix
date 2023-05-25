@@ -1,0 +1,6 @@
+/* styles.css */
+.anchor-pane {
+    -fx-background-image: url("images/scene1.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}

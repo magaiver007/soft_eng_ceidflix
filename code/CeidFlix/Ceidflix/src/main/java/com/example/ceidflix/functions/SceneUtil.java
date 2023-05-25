@@ -1,47 +1,73 @@
 package com.example.ceidflix.functions;
 //import com.example.ceidflix.interfaces.DataReceiver;
 import com.example.ceidflix.ceidFlix;
+<<<<<<< Updated upstream:code/CeidFlix/Ceidflix/src/main/java/com/example/ceidflix/functions/SceneUtil.java
 import com.example.ceidflix.controllers.signUpController;
+=======
+import com.example.ceidflix.models.User;
+>>>>>>> Stashed changes:CeidFlix/Ceidflix/src/main/java/com/example/ceidflix/functions/SceneUtil.java
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SceneUtil extends signUpController {
 
-    public static void changeScene(String fxmlFileName, Button button) {
-        changeScene(fxmlFileName, button, null);
+    public static void changeScene(String fxmlFileName, MouseEvent event) {
+        changeScene(fxmlFileName, event, null);
     }
 
-    public static void changeScene(String fxmlFileName, Button button,  ArrayList<Object> data){
+    public static void changeScene(String fxmlFileName, MouseEvent event, Object data) {
         try {
-            // Load the FXML file for the new scene
+            // Step 1: Grab the node representing the button from the event object
+            Node node = (Node) event.getSource();
+
+            // Step 2: Get the instance of the stage from the node and close it
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.close();
+
+            // Step 3: Load the scene through the FXMLLoader class
             FXMLLoader fxmlLoader = new FXMLLoader(ceidFlix.class.getResource(fxmlFileName));
             Parent root = fxmlLoader.load();
 
-            // Create a new scene with the loaded FXML content
+            // Step 4: Pass the information to the stage using the setUserData function
+            if (data != null){
+                stage.setUserData(data);
+            }
+
+            // Step 5: Create a new scene and pass it to the stage
             Scene scene = new Scene(root);
-
-//            if (data != null) {
-//                // If data is provided, pass it to the controller
-//                Object controller = fxmlLoader.getController();
-//                if (controller instanceof DataReceiver) {
-//                    ((DataReceiver) controller).setData(data);
-//                }
-//            }
-
-            // Get the current stage (window)
-            Stage stage = (Stage) button.getScene().getWindow();
-
-            // Set the new scene as the active scene on the stage
             stage.setScene(scene);
+
+            // Step 6: Make the stage visible again
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle any exceptions that occur during scene loading
         }
     }
+
+    public static Object readData() {
+        // Retrieve the current stage
+        Stage stage = (Stage) Stage.getWindows().stream()
+                .filter(Window::isShowing)
+                .findFirst()
+                .orElse(null);
+
+        // Retrieve the data from the stage's user data
+        if (stage != null) {
+            Object data = stage.getUserData();
+            // You can perform any additional processing or checks here if needed
+            return data;
+        }
+
+        return null;
+    }
+
 }

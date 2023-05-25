@@ -5,6 +5,7 @@ import com.example.ceidflix.functions.SceneUtil;
 import com.example.ceidflix.models.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 
@@ -29,18 +30,20 @@ public class signUpController {
     @FXML
     private Button signUpButton;
 
+    @FXML
+    private void initialize(){
+        signUpButton.setOnMouseClicked(this::onCreateAccountButtonClicked);
+    }
 
     @FXML
-    protected void onCreateAccountButtonClicked() {
+    protected void onCreateAccountButtonClicked(MouseEvent event) {
 
-//        User user = new User(signUpName.getText(), signUpUsername.getText(), signUpEmail.getText());
-//        ArrayList<Object> data = new ArrayList<Object>();
-//        data.add(user);
+        User user = new User(signUpName.getText(), signUpUsername.getText(), signUpEmail.getText());
 
        //TODO: Do the necessary checks and validations for the user input
        //TODO: If validation is correct, add the user data to the database
 
-        SceneUtil.changeScene("successfulSignUp.fxml", signUpButton, null);
+        SceneUtil.changeScene("successfulSignUp.fxml", event, user);
 
     }
 

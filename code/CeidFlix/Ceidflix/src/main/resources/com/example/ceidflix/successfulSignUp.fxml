@@ -19,7 +19,7 @@
             <Font size="38.0" />
          </font>
       </Text>
-      <Button fx:id="toProfile" layoutX="241.0" layoutY="224.0" mnemonicParsing="false" onAction="#onSuccessfulLoginButtonClick" prefHeight="25.0" prefWidth="117.0" text="Go to profile" />
+      <Button fx:id="toProfile" layoutX="241.0" layoutY="224.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Go to profile" />
       <Label fx:id="userNameLabel" layoutX="286.0" layoutY="267.0" text="Label" />
    </AnchorPane>
 </VBox>
