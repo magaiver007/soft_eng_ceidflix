@@ -1,0 +1,57 @@
+
+statistika | ntiri
+
+subscription/payment/credits | ntiri
+
+parental control | ntiri
+
+krathsh thesis/eisitirio  | taxiarxis
+
+dimopsifisma  | taxiarxis
+
+Content Review | taxiarxis
+
+epeksergasia stoixiwn profile | mitsos
+
+watching list/proteinomena | mitsos
+
+group view me psifoforia gia tin tainia | mitsos
+
+
+
+Actors:
+
+User (Reviewer)
+System
+Description:
+This use case describes the process of a user reviewing a movie or TV show on the streaming platform.
+
+Preconditions:
+
+User is logged in to their account on the streaming platform.
+User has watched the movie or TV show they want to review.
+Basic Flow:
+
+User selects the movie or TV show they want to review.
+System displays the content details page.
+User navigates to the review section of the content details page.
+System presents an interface for the user to provide their review.
+User rates the content using a star rating system (e.g., 1 to 5 stars).
+User writes their review by entering text in a dedicated text field.
+User submits their review.
+System validates the review and rating inputs provided by the user.
+System saves the user's review and rating in the database associated with the content.
+System updates the average rating for the content based on the user's review.
+System may display the user's review on the content details page for other users to see.
+System may send a notification to the user to acknowledge the successful submission of their review.
+Alternative Flow:
+
+Step 5a: If the user decides not to rate the content, they can skip the rating step and proceed to write their review.
+Step 6a: If the user decides not to write a review, they can skip the review text input and submit an empty review.
+Step 9a: If the user's review or rating input is invalid or fails validation, the system prompts the user to provide valid inputs or displays an error message.
+Step 12a: If the system fails to save the user's review or encounters an error, it notifies the user about the failure and prompts them to retry or contact customer support.
+Postconditions:
+
+User's review and rating are successfully saved and associated with the content.
+Average rating for the content is updated to reflect the new review.
+User may receive notifications or updates regarding their review submission.
